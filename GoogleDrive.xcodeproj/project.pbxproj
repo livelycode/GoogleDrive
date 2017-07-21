@@ -13,6 +13,7 @@
 		954810751F21182200038A90 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954810741F21182200038A90 /* Util.swift */; };
 		954810771F211C4400038A90 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954810761F211C4400038A90 /* main.swift */; };
 		954810791F211C8F00038A90 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954810781F211C8F00038A90 /* Extension.swift */; };
+		9580ABCE1F2283920053874D /* HttpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9580ABCD1F2283920053874D /* HttpApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		954810571F210EAD00038A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9548105B1F210EAD00038A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954810601F210EAD00038A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		954810651F210EAD00038A90 /* GoogleDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoogleDriveTests.xctest; path = /Users/johannesauer/Documents/GoogleDrive/build/Debug/GoogleDriveTests.xctest; sourceTree = "<absolute>"; };
 		954810691F210EAD00038A90 /* GoogleDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDriveTests.swift; sourceTree = "<group>"; };
 		9548106B1F210EAD00038A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954810741F21182200038A90 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		954810761F211C4400038A90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		954810781F211C8F00038A90 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9548107A1F211FBF00038A90 /* GoogleDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9580ABC91F2277450053874D /* GoogleDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9580ABCD1F2283920053874D /* HttpApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpApi.swift; path = GoogleDrive/HttpApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,11 @@
 		9548104B1F210EAD00038A90 = {
 			isa = PBXGroup;
 			children = (
+				9580ABCC1F227F3D0053874D /* io */,
 				954810561F210EAD00038A90 /* misc */,
 				954810681F210EAD00038A90 /* tests */,
 				9548107A1F211FBF00038A90 /* GoogleDrive.app */,
+				9580ABC91F2277450053874D /* GoogleDriveTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +91,14 @@
 			);
 			name = tests;
 			path = GoogleDriveTests;
+			sourceTree = "<group>";
+		};
+		9580ABCC1F227F3D0053874D /* io */ = {
+			isa = PBXGroup;
+			children = (
+				9580ABCD1F2283920053874D /* HttpApi.swift */,
+			);
+			name = io;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +136,7 @@
 			);
 			name = GoogleDriveTests;
 			productName = GoogleDriveTests;
-			productReference = 954810651F210EAD00038A90 /* GoogleDriveTests.xctest */;
+			productReference = 9580ABC91F2277450053874D /* GoogleDriveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +207,7 @@
 				954810751F21182200038A90 /* Util.swift in Sources */,
 				954810771F211C4400038A90 /* main.swift in Sources */,
 				954810791F211C8F00038A90 /* Extension.swift in Sources */,
+				9580ABCE1F2283920053874D /* HttpApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +401,7 @@
 				954810701F210EAD00038A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		954810711F210EAD00038A90 /* Build configuration list for PBXNativeTarget "GoogleDriveTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +410,7 @@
 				954810731F210EAD00038A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
