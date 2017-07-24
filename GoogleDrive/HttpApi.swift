@@ -1,27 +1,47 @@
 
 import Foundation
 
-class HttpApi {
+class HttpRequest {
   
-  private let session = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "foo"), delegate: nil, delegateQueue: OperationQueue.main)
-  private let host: String
-  private let pathPrefix: String
+  private let session: URLSession
   
-  init(host: String, pathPrefix: String...) {
-    self.host = host
-    self.pathPrefix = "/" + pathPrefix.joined(separator: "/")
+  init() {
+    let config = URLSessionConfiguration.default
+    session = URLSession(configuration: config, delegate: nil, delegateQueue: .main)
   }
   
-  func request(pathComponents: String..., callback: @escaping (URLRequest, URLResponse?, Data?) -> Void) {
-    var urlComponents = URLComponents()
-    urlComponents.scheme = "https"
-    urlComponents.host = host
-    urlComponents.path = pathPrefix + pathComponents.joined(separator: "/")
-    let request = URLRequest(url: urlComponents.url!)
+  func get(url: URL, header: [String: String], callback: @escaping (URLRequest, URLResponse?, Data?) -> Void) {
+    var request = URLRequest(url: url)
+    request.httpMethod = HttpMethod.get
+    request.allHTTPHeaderFields = header
     let task = session.dataTask(with: request) { data, response, error in
       callback(request, response, data)
     }
     task.resume()
   }
+  
+  func download(from url: URL, callback: @escaping (URLRequest, URLResponse?, Data?) -> Void) {
+    let task = session.downloadTask(with: url) { url, response, error in
+      
+    }
+    task.resume()
+  }
+  
+  func upload(file: URL, to url: URL, callback: @escaping (URLRequest, URLResponse?, Data?) -> Void) {
+    var request = URLRequest(url: url)
+    request.httpMethod = HttpMethod.post
+    let task = session.uploadTask(with: request, fromFile: file) { data, response, error in
+      
+    }
+    task.resume()
+  }
+  
+}
+
+struct HttpMethod {
+  
+  static let get = "GET"
+  static let put = "PUT"
+  static let post = "POST"
   
 }
