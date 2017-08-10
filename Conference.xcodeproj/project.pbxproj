@@ -24,8 +24,8 @@
 		954810761F211C4400038A90 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		954810781F211C8F00038A90 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		95A535951F361EE000D18F4A /* VideoSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoSession.swift; path = GoogleDrive/VideoSession.swift; sourceTree = "<group>"; };
-		95C501E41F361B81000C71BD /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C501E51F361BF1000C71BD /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		95F4883E1F39CD1200CDE0D3 /* Conference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,19 +53,19 @@
 				95026D4B1F371F1D004AAE88 /* controller */,
 				9580ABCC1F227F3D0053874D /* video */,
 				954810561F210EAD00038A90 /* misc */,
-				95C501E41F361B81000C71BD /* Conference.app */,
+				95F4883E1F39CD1200CDE0D3 /* Conference.app */,
 			);
 			sourceTree = "<group>";
 		};
 		954810561F210EAD00038A90 /* misc */ = {
 			isa = PBXGroup;
 			children = (
-				9548105B1F210EAD00038A90 /* Assets.xcassets */,
-				954810601F210EAD00038A90 /* Info.plist */,
 				954810761F211C4400038A90 /* main.swift */,
 				954810571F210EAD00038A90 /* AppDelegate.swift */,
 				954810781F211C8F00038A90 /* Extension.swift */,
 				95C501E51F361BF1000C71BD /* Appearance.swift */,
+				954810601F210EAD00038A90 /* Info.plist */,
+				9548105B1F210EAD00038A90 /* Assets.xcassets */,
 			);
 			name = misc;
 			path = GoogleDrive;
@@ -96,7 +96,7 @@
 			);
 			name = Conference;
 			productName = GoogleDrive;
-			productReference = 95C501E41F361B81000C71BD /* Conference.app */;
+			productReference = 95F4883E1F39CD1200CDE0D3 /* Conference.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +275,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.GoogleDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -289,7 +289,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.livelycode.GoogleDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
