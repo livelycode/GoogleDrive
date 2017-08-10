@@ -3,8 +3,14 @@ import AppKit
 
 class AppDelegate: NSObject {
   
-  let window = NSWindow(centeredWithSize: Appearance.windowSize)
-  let conferenceController = ConferenceController()
+  let window: NSWindow
+  let conferenceController: ConferenceController
+  
+  override init() {
+    window = NSWindow(centeredWithSize: Appearance.windowSize)
+    conferenceController = ConferenceController()
+    super.init()
+  }
   
 }
 

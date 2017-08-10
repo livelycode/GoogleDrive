@@ -17,7 +17,6 @@ class VideoSession: NSObject {
   let input: AVCaptureDeviceInput
   let output: AVCaptureVideoDataOutput
   let serialQueue: DispatchQueue
-  let previewLayer: AVCaptureVideoPreviewLayer
   
   weak var delegate: VideoSessionDelegate?
   
@@ -27,7 +26,6 @@ class VideoSession: NSObject {
     input = try! AVCaptureDeviceInput(device: camera)
     output = AVCaptureVideoDataOutput()
     serialQueue = DispatchQueue(label: "CameraBufferQueue")
-    previewLayer = AVCaptureVideoPreviewLayer(session: session)
     super.init()
     session.sessionPreset = AVCaptureSessionPresetMedium
     session.addInput(input)
@@ -36,9 +34,6 @@ class VideoSession: NSObject {
       AVVideoCodecKey: AVVideoCodecH264
     ]
     output.setSampleBufferDelegate(self, queue: serialQueue)
-    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-    previewLayer.connection.automaticallyAdjustsVideoMirroring = false
-    previewLayer.connection.isVideoMirrored = true
     NotificationCenter.default.addObserver(forName: .AVCaptureSessionDidStartRunning, object: session, queue: nil) { notification in
       self.delegate?.didStart(session: self)
     }
